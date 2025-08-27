@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Amazing Cart</title>
+    <link rel="stylesheet" href="/home.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-graduation-cap"></i> Amazing Cart</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/materials" class="nav-link">Materials</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/contactus" class="nav-link active">Contact</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn btn-outline" onclick="showLoginModal()">Login</button>
+                <button class="btn btn-primary" onclick="showRegisterModal()">Register</button>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="hero" style="margin-top: 70px; padding: 80px 0;">
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1>Contact Us</h1>
+                <p>Get in touch with us for any questions or support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content" style="padding: 80px 0;">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Have questions about our study materials or need support? We're here to help!</p>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@amazingcart.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Education Street<br>Learning City, LC 12345<br>India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Full Name</label>
+                            <input type="text" id="contactName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" style="background: #f8f9fa; padding: 80px 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How do I upload study materials?</h3>
+                    <p>Register for an account, login, and click the "Upload Material" button. Fill in the required details and upload your PDF file.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Are the materials free to download?</h3>
+                    <p>Yes, all study materials on Amazing Cart are completely free for registered users.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What file formats are supported?</h3>
+                    <p>Currently, we only support PDF files for study materials to ensure compatibility and quality.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How do I report inappropriate content?</h3>
+                    <p>If you find any inappropriate content, please contact us immediately through our contact form or email.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can I contribute as a teacher?</h3>
+                    <p>Absolutely! Teachers and educators are welcome to contribute their study materials to help students.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is my personal information secure?</h3>
+                    <p>Yes, we take data security seriously. All personal information is encrypted and stored securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-graduation-cap"></i> Amazing Cart</h3>
+                    <p>Your trusted source for quality study materials for competitive exams.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/materials">Materials</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contactus">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Exams</h4>
+                    <ul>
+                        <li><a href="/materials?exam=UPSC">UPSC</a></li>
+                        <li><a href="/materials?exam=JEE">JEE</a></li>
+                        <li><a href="/materials?exam=NEET">NEET</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> info@amazingcart.com</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Amazing Cart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            // Simple form validation
+            if (!name || !email || !subject || !message) {
+                showMessage('Please fill in all fields', 'error');
+                return;
+            }
+            
+            // Simulate form submission
+            showMessage('Thank you for your message! We will get back to you soon.', 'success');
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+</body>
+</html>

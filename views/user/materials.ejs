@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Materials - Amazing Cart</title>
+    <link rel="stylesheet" href="/home.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-graduation-cap"></i> Amazing Cart</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/materials" class="nav-link active">Materials</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/contactus" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn btn-outline" onclick="showLoginModal()">Login</button>
+                <button class="btn btn-primary" onclick="showRegisterModal()">Register</button>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search and Filter Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-input">
+                    <input type="text" id="searchInput" placeholder="Search materials..." onkeyup="handleSearch()">
+                </div>
+                <div class="filter-group">
+                    <select id="examFilter" onchange="handleFilter()" class="filter-select">
+                        <option value="">All Exams</option>
+                        <option value="UPSC">UPSC</option>
+                        <option value="JEE">JEE</option>
+                        <option value="NEET">NEET</option>
+                    </select>
+                    <select id="typeFilter" onchange="handleFilter()" class="filter-select">
+                        <option value="">All Types</option>
+                        <option value="notes">Notes</option>
+                        <option value="dpp">DPP</option>
+                        <option value="pyq">PYQ</option>
+                        <option value="test-series">Test Series</option>
+                        <option value="book">Books</option>
+                    </select>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="materials-section">
+        <div class="container">
+            <div class="materials-header">
+                <h2>Study Materials</h2>
+                <p id="materialsCount">Loading materials...</p>
+            </div>
+            
+            <div class="materials-group">
+                <h3 class="section-title">JEE</h3>
+                <div class="book-thumbs" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:16px;">
+                    <img src="/jee/jee1.jpeg" alt="JEE Book 1" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/jee/jee2.jpeg" alt="JEE Book 2" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/jee/jee3.jpeg" alt="JEE Book 3" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/jee/jee4.jpeg" alt="JEE Book 4" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/jee/jee5.jpeg" alt="JEE Book 5" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/jee/jee6.jpeg" alt="JEE Book 6" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/jee/jee7.jpeg" alt="JEE Book 7" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/jee/jee8.jpeg" alt="JEE Book 8" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                </div>
+                <div class="materials-grid" id="materialsContainerJEE"></div>
+            </div>
+
+            <div class="materials-group" style="margin-top: 2rem;">
+                <h3 class="section-title">NEET</h3>
+                <div class="book-thumbs" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:16px;">
+                    <img src="/neet/neet1.jpeg" alt="NEET Book 1" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/neet/neet2.jpeg" alt="NEET Book 2" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/neet/neet3.jpeg" alt="NEET Book 3" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/neet/neet4.jpeg" alt="NEET Book 4" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/neet/neet5.jpeg" alt="NEET Book 5" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/neet/neet6.jpeg" alt="NEET Book 6" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/neet/neet7.jpeg" alt="NEET Book 7" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/neet/neet8.png" alt="NEET Book 8" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                </div>
+                <div class="materials-grid" id="materialsContainerNEET"></div>
+            </div>
+
+            <div class="materials-group" style="margin-top: 2rem;">
+                <h3 class="section-title">UPSC</h3>
+                <div class="book-thumbs" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:16px;">
+                    <img src="/upsc/upsc1.jpeg" alt="UPSC Book 1" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/upsc/upsc2.jpeg" alt="UPSC Book 2" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/upsc/upsc3.jpeg" alt="UPSC Book 3" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/upsc/upsc4.jpeg" alt="UPSC Book 4" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/upsc/upsc5.jpeg" alt="UPSC Book 5" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/upsc/upsc6.jpeg" alt="UPSC Book 6" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/upsc/upsc7.jpeg" alt="UPSC Book 7" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                    <img src="/upsc/upsc9.jpeg" alt="UPSC Book 8" width="120" height="160" style="background:#f8fafc;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;padding:8px;" />
+                </div>
+                <div class="materials-grid" id="materialsContainerUPSC"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <label>Exam Interests</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="UPSC"> UPSC</label>
+                        <label><input type="checkbox" value="JEE"> JEE</label>
+                        <label><input type="checkbox" value="NEET"> NEET</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-graduation-cap"></i> Amazing Cart</h3>
+                    <p>Your trusted source for quality study materials for competitive exams.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/materials">Materials</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contactus">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Exams</h4>
+                    <ul>
+                        <li><a href="/materials?exam=UPSC">UPSC</a></li>
+                        <li><a href="/materials?exam=JEE">JEE</a></li>
+                        <li><a href="/materials?exam=NEET">NEET</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> info@amazingcart.com</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Amazing Cart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+   
+    <script src="js/main.js"></script>
+    <script src="js/materials.js"></script>
+</body>
+</html>

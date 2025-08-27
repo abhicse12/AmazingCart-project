@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Cart - Study Materials for UPSC, JEE, NEET</title>
+    <link rel="stylesheet" href="/home.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-graduation-cap"></i> Amazing Cart</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link active">Home</a>
+                <a href="/materials" class="nav-link">Materials</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/contactus" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn btn-outline" onclick="showLoginModal()">Login</button>
+                <button class="btn btn-primary" onclick="showRegisterModal()">Register</button>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Your Gateway to Quality Study Materials</h1>
+                <p>Access comprehensive notes, DPPs, PYQs, test series, and famous author books for UPSC, JEE, and NEET preparation.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" onclick="location.href='/materials'">
+                        <i class="fas fa-search"></i> Browse Materials
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-students.svg" alt="Students studying">
+            </div>
+        </div>
+    </section>
+
+    <!-- Exam Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Choose Your Exam</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="filterByExam('UPSC')">
+                    <div class="category-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>UPSC</h3>
+                    <p>Civil Services Examination materials including History, Geography, Polity, and more.</p>
+                    <div class="category-stats">
+                        <span><i class="fas fa-file-pdf"></i> 500+ Materials</span>
+                        <span><i class="fas fa-users"></i> 10K+ Students</span>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterByExam('JEE')">
+                    <div class="category-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3>JEE</h3>
+                    <p>Joint Entrance Examination materials for Physics, Chemistry, and Mathematics.</p>
+                    <div class="category-stats">
+                        <span><i class="fas fa-file-pdf"></i> 800+ Materials</span>
+                        <span><i class="fas fa-users"></i> 15K+ Students</span>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterByExam('NEET')">
+                    <div class="category-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>NEET</h3>
+                    <p>National Eligibility cum Entrance Test materials for Biology, Physics, and Chemistry.</p>
+                    <div class="category-stats">
+                        <span><i class="fas fa-file-pdf"></i> 600+ Materials</span>
+                        <span><i class="fas fa-users"></i> 12K+ Students</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Material Types -->
+    <section class="material-types">
+        <div class="container">
+            <h2 class="section-title">Study Material Types</h2>
+            <div class="type-grid">
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-sticky-note"></i>
+                    </div>
+                    <h3>Notes</h3>
+                    <p>Comprehensive study notes prepared by experts</p>
+                </div>
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>DPP</h3>
+                    <p>Daily Practice Problems for regular practice</p>
+                </div>
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>PYQ</h3>
+                    <p>Previous Year Questions with solutions</p>
+                </div>
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Test Series</h3>
+                    <p>Mock tests and practice exams</p>
+                </div>
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Books</h3>
+                    <p>Famous author books and reference materials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Materials -->
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Featured Materials</h2>
+            <div class="materials-grid" id="featuredMaterials">
+                <!-- Materials will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <label>Exam Interests</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="UPSC"> UPSC</label>
+                        <label><input type="checkbox" value="JEE"> JEE</label>
+                        <label><input type="checkbox" value="NEET"> NEET</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-graduation-cap"></i> Amazing Cart</h3>
+                    <p>Your trusted source for quality study materials for competitive exams.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/materials">Materials</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contactus">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Exams</h4>
+                    <ul>
+                        <li><a href="/materials?exam=UPSC">UPSC</a></li>
+                        <li><a href="/materials?exam=JEE">JEE</a></li>
+                        <li><a href="/materials?exam=NEET">NEET</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> info@amazingcart.com</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Amazing Cart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
